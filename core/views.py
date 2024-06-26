@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .forms import LoginForm
+from .forms import LoginForm, RegistrationForm
 from django.http import HttpResponse
 
 
@@ -22,6 +22,23 @@ def user_login(request):
         form = LoginForm()
     return render(request, 'core/login.html', {
         'form': form
+    })
+
+
+def user_registration(request):
+    if request.method == "POST":
+        user_form = RegistrationForm(request.POST)
+        if user_form.is_valid():
+            new_user = user_form.save(commit=False)
+            # Enable password hashing first
+            new_user.set_password(user_form.cleaned_data['password'])
+            new_user.save()
+            return redirect('core:login')
+    else:
+        user_form = RegistrationForm()
+
+    return render(request, 'core/register.html', {
+        'user_form': user_form
     })
 
 
