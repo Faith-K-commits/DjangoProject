@@ -16,7 +16,7 @@ def user_login(request):
                 login(request, user)
                 return redirect('core:home')
             else:
-                return HttpResponse('Invalid username or password. Please try again letter.')
+                return HttpResponse('Invalid username or password. Please try again later.')
 
     else:
         form = LoginForm()

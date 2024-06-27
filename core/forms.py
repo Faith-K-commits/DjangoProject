@@ -26,3 +26,4 @@ class RegistrationForm(forms.ModelForm):
         if User.objects.filter(email=data).exists():
             raise forms.ValidationError('Email already registered.')
         return data
+# TODO: Write tests for the forms
