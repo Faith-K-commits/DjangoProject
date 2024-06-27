@@ -30,6 +30,7 @@ def user_registration(request):
         user_form = RegistrationForm(request.POST)
         if user_form.is_valid():
             new_user = user_form.save(commit=False)
+
             # Enable password hashing first
             new_user.set_password(user_form.cleaned_data['password'])
             new_user.save()

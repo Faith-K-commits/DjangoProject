@@ -18,7 +18,7 @@ class RegistrationForm(forms.ModelForm):
     def clean_password2(self):
         cd = self.cleaned_data
         if cd['password'] != cd['password2']:
-            raise forms.ValidationError('Passwords do not match')
+            raise forms.ValidationError('Passwords do not match.')
         return cd['password2']
 
     def clean_email(self):
@@ -26,4 +26,3 @@ class RegistrationForm(forms.ModelForm):
         if User.objects.filter(email=data).exists():
             raise forms.ValidationError('Email already registered.')
         return data
-# TODO: Write tests for the forms
