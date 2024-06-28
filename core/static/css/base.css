@@ -46,3 +46,12 @@ button {
     cursor: pointer;
     margin-left: 70px;
 }
+.title:hover{
+    background-color: #007bff;
+    color: white;
+    padding: 10px 0;
+    border: 1px solid;
+    border-radius: 50px;
+    width: 150px;
+    text-align: center;
+}

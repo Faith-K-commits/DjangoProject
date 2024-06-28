@@ -1,8 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}
-	MyApp
-{% endblock %}
 {% block content %}
 	<h1>Welcome to my App</h1>
-    <p>You are logged in successfully! Click <a href="{% url 'core:logout' %}">here</a> to log out.</p>
+    <h4>You are logged in successfully! Click <a href="{% url 'core:logout' %}">here</a> to log out.</h4>
 {% endblock %}
