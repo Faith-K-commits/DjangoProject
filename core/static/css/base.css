@@ -8,12 +8,19 @@
 
 body {
     margin: 20px 100px;
-    background-color: black;
-    color: white;
 }
 
+header {
+    color: #007bff;
+    font-weight: bold;
+    font-size: large;
+}
 
-form {
+h1, .title {
+    color: #007bff;
+}
+
+form, h1, p, h4, header {
     margin: 20px;
     display: flex;
     flex-direction: column;
@@ -29,10 +36,13 @@ input {
 }
 
 button {
+    display: flex;
+    align-items: center;
     padding: 10px 15px;
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin-left: 70px;
 }
